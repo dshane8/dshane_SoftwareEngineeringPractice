@@ -31,8 +31,9 @@ public class BankAccount {
      * than the balance or negative, it should do nothing
      */
     public void withdraw (double amount)  {
-        balance -= amount;
-
+        if (amount > 0 && amount < balance) {
+            balance -= amount;
+        }
     }
 
     /**
