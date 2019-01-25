@@ -21,6 +21,8 @@ class BankAccountTest {
         assertEquals(100, bankAccount.getBalance());
 
         bankAccount.withdraw(200);
+
+        assertEquals(100, bankAccount.getBalance());
     }
 
     @Test
