@@ -34,7 +34,11 @@ public class BankAccount {
 
     }
 
-
+    /**
+     * An email is valid if it contains an '@' sign
+     * @param email - string of the email address to be validated
+     * @return - true if the email is valid, false if not
+     */
     public static boolean isEmailValid(String email){
         if (email.indexOf('@') == -1){
             return false;

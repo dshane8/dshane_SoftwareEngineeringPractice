@@ -19,12 +19,15 @@ class BankAccountTest {
         bankAccount.withdraw(100);
 
         assertEquals(100, bankAccount.getBalance());
+
+        bankAccount.withdraw(200);
     }
 
     @Test
     void isEmailValidTest(){
         assertTrue(BankAccount.isEmailValid( "a@b.com"));
-        assertFalse( BankAccount.isEmailValid(""));
+        assertFalse(BankAccount.isEmailValid(""));
+        assertFalse(BankAccount.isEmailValid("@@@@@"));
     }
 
     @Test
