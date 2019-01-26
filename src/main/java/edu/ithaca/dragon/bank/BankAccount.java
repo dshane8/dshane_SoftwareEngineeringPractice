@@ -18,7 +18,7 @@ public class BankAccount {
         }
     }
 
-    public double getBalance(){
+    public double getBalance() {
         return balance;
     }
 
@@ -47,6 +47,10 @@ public class BankAccount {
                 return true;
             }
         }
+        return false;
+    }
+
+    public static boolean isAmountValid(double amount){
         return false;
     }
 }

@@ -8,9 +8,9 @@ class BankAccountTest {
 
     @Test
     void getBalanceTest() {
-        BankAccount bankAccount = new BankAccount("a@b.com", 200);
+        BankAccount bankAccount = new BankAccount("a@b.com", 200.50);
 
-        assertEquals(200, bankAccount.getBalance());
+        assertEquals(200.50, bankAccount.getBalance());
     }
 
     @Test
@@ -44,6 +44,14 @@ class BankAccountTest {
         assertEquals(200, bankAccount.getBalance());
         //check for exception thrown correctly
         assertThrows(IllegalArgumentException.class, ()-> new BankAccount("", 100));
+    }
+
+    @Test
+    void isAmountValidTest(){
+        assertTrue(BankAccount.isAmountValid(200));
+        assertFalse(BankAccount.isAmountValid(-50));
+        assertFalse(BankAccount.isAmountValid(20.051));
+        assertTrue(BankAccount.isAmountValid(100.37));
     }
 
 }
