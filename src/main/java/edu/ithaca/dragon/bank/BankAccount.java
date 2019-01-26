@@ -9,12 +9,12 @@ public class BankAccount {
      * @throws IllegalArgumentException if email is invalid
      */
     public BankAccount(String email, double startingBalance){
-        if (isEmailValid(email)){
+        if (isEmailValid(email) && isAmountValid(startingBalance)){
             this.email = email;
             this.balance = startingBalance;
         }
         else {
-            throw new IllegalArgumentException("Email address: " + email + " is invalid, cannot create account");
+            throw new IllegalArgumentException("One or more of the values you entered are invalid, cannot create account");
         }
     }
 
@@ -31,7 +31,7 @@ public class BankAccount {
      * than the balance or negative, it should do nothing
      */
     public void withdraw (double amount)  {
-        if (amount > 0 && amount < balance) {
+        if (amount < balance && isAmountValid(amount)) {
             balance -= amount;
         }
     }
